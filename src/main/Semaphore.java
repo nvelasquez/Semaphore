@@ -11,6 +11,7 @@ import java.awt.Graphics2D;
 import java.awt.Shape;
 import java.awt.geom.Ellipse2D;
 import java.awt.geom.Rectangle2D;
+import java.util.concurrent.TimeUnit;
 
 /**
  *
@@ -96,7 +97,7 @@ public class Semaphore extends Component implements Runnable{
                     }
                 }
                 try{
-                    Thread.sleep(1000);//Sleep for a second.
+                    Thread.sleep(TimeUnit.SECONDS.toMillis(1));//Sleep for a second.
                     in.setTimer(in.getTimer()-1);
                 }
                 catch(InterruptedException e){
